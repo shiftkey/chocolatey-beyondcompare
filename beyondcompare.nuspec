@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>beyondcompare</id>
+    <version>3.3.4.14432</version>
+    <title>Beyond COmpare</title>
+    <authors>Scooter Software</authors>
+    <owners>Miguel Madero</owners>
+    <projectUrl>http://scootersoftware.com/download.php</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Beyond Compare 3 is the ideal tool for comparing files and folders on your Windows or Linux system. Visualize changes in your code and carefully reconcile them.</description>
+    <summary>Beyond Compare 3 is the ideal tool for comparing files and folders on your Windows or Linux system. Visualize changes in your code and carefully reconcile them.</summary>
+    <tags>compare beyondcompare beyond</tags>
+  </metadata>
+</package>
