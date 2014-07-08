@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>beyondcompare</id>
-    <version>3.3.10.17762</version>
+    <version>3.3.11.18371</version>
     <title>Beyond Compare</title>
     <authors>Scooter Software</authors>
     <owners>Miguel Madero, Brendan Forster</owners>
@@ -11,5 +11,31 @@
     <description>Beyond Compare 3 is the ideal tool for comparing files and folders on your Windows or Linux system. Visualize changes in your code and carefully reconcile them.</description>
     <summary>Beyond Compare 3 is the ideal tool for comparing files and folders on your Windows or Linux system. Visualize changes in your code and carefully reconcile them.</summary>
     <tags>compare beyondcompare beyond</tags>
+	<releaseNotes>
+--------------------------------
+v3.3.11.18371      June 26, 2014
+--------------------------------
+
+- Command Line
+  - Fixed "?" command line switch.
+
+- File Views
+  - Reverted change that truncated display of long lines in Data/MP3/Registry/
+    Version compares.
+
+- Folder Compare
+  - Fixed loading folders from certain network attached storage (NAS) devices,
+    broken in 3.3.9.
+  - Fixed crash when reaching the maximum number of log items..
+  - Fixed distributed and deduplicated filesystems showing all files as
+    symbolic links.
+
+- Registry Compare
+  - Fixed deleting or renaming keys.
+
+- Text Views
+  - Fixed crash when going to next difference or scrolling horizontally.
+  - Fixed crash when double clicking on an unfocused editor.	
+	</releaseNotes>
   </metadata>
 </package>
