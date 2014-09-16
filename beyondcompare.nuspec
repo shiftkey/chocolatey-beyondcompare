@@ -2,23 +2,21 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>beyondcompare</id>
-    <version>3.3.12.18414</version>
+    <version>4.0.0.18847</version>
     <title>Beyond Compare</title>
     <authors>Scooter Software</authors>
     <owners>Miguel Madero, Brendan Forster</owners>
     <projectUrl>http://scootersoftware.com/download.php</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Beyond Compare 3 is the ideal tool for comparing files and folders on your Windows or Linux system. Visualize changes in your code and carefully reconcile them.</description>
-    <summary>Beyond Compare 3 is the ideal tool for comparing files and folders on your Windows or Linux system. Visualize changes in your code and carefully reconcile them.</summary>
+    <description>Beyond Compare is focused.  Beyond Compare allows you to quickly and easily compare your files and folders.  By using simple, powerful commands you can focus on the differences you're interested in and ignore those you're not.  You can then merge the changes, synchronize your files, and generate reports for your records.</description>
+    <summary>Beyond Compare is focused.  Beyond Compare allows you to quickly and easily compare your files and folders.  By using simple, powerful commands you can focus on the differences you're interested in and ignore those you're not.  You can then merge the changes, synchronize your files, and generate reports for your records.</summary>
     <tags>compare beyondcompare beyond</tags>
 	<releaseNotes>
     --------------------------------
-    v3.3.12.18414       July 2, 2014
+    v4.0.0.18847       Sept. 1, 2014
     --------------------------------
 
-    - Fixed double-clicking in the folder compare changing focus back to it after
-    opening a file compare.
-    - Fixed crash loading the first comparison on Windows 7+.
+    - This is the first official release of Beyond Compare version 4.
   </releaseNotes>
   </metadata>
 </package>
