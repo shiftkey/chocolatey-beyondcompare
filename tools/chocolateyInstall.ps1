@@ -1,1 +1,1 @@
-﻿Install-ChocolateyPackage 'beyondcompare' 'exe' '/SP- /VERYSILENT /NORESTART' 'http://www.scootersoftware.com/BCompare-3.3.12.18414.exe'
+﻿Install-ChocolateyPackage 'beyondcompare' 'exe' '/SP- /VERYSILENT /NORESTART' 'http://www.scootersoftware.com/BCompare-4.0.0.18847.exe'
