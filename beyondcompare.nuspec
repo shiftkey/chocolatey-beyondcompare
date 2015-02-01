@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>beyondcompare</id>
-    <version>4.0.0.18847</version>
+    <version>4.0.5.19480</version>
     <title>Beyond Compare</title>
     <authors>Scooter Software</authors>
     <owners>Miguel Madero, Brendan Forster</owners>
@@ -13,10 +13,10 @@
     <tags>compare beyondcompare beyond</tags>
 	<releaseNotes>
     --------------------------------
-    v4.0.0.18847       Sept. 1, 2014
+    v4.0.5.19480,      Jan. 27, 2015
     --------------------------------
 
-    - This is the first official release of Beyond Compare version 4.
+    - This is the current release of Beyond Compare version 4.
   </releaseNotes>
   </metadata>
 </package>
