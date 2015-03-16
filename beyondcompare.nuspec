@@ -24,7 +24,7 @@
     - Changed secure connections to use TLS 1.0-1.2 rather than SSL3 and TLS 1.0.
 
     Command Line
-    - A settings package file (.bcpkg) can now be imported non-interactively from the command line using bcompare <filename> /silent
+    - A settings package file (.bcpkg) can now be imported non-interactively from the command line using bcompare &lt;filename&gt; /silent
 
     Folder Compare
     - Fixed connecting to a UNC path without permission to access parent folders.
