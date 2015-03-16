@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>beyondcompare</id>
-    <version>4.0.5.19480</version>
+    <version>4.0.6.19729</version>
     <title>Beyond Compare</title>
     <authors>Scooter Software</authors>
     <owners>Miguel Madero, Brendan Forster</owners>
@@ -12,14 +12,49 @@
     <summary>Beyond Compare is focused.  Beyond Compare allows you to quickly and easily compare your files and folders.  By using simple, powerful commands you can focus on the differences you're interested in and ignore those you're not.  You can then merge the changes, synchronize your files, and generate reports for your records.</summary>
     <tags>compare beyondcompare beyond</tags>
 	<releaseNotes>
-      --------------------------------
-      v4.0.5.19480,      Jan. 27, 2015
-      --------------------------------
+    --------------------------------
+    v4.0.6.19729,      Feb. 27, 2015
+    --------------------------------
 
-      FTP
-      - Fixed support for connecting through SSL using FTPS, Webdav, and other connection methods after patches for Poodle exploit.
-      - Fixed re-prompting for an SSH private key passphrase if the first one entered isn't correct.
-      - Fixed loading the public key portion of a PuTTY .ppk file when the private key is encrypted.
+    Notable Changes
+    - Added support for non-interactively importing .bcpkg files.
+    - Fixed SSL/TLS connection issues.
+
+    Cloud Services
+    - Changed secure connections to use TLS 1.0-1.2 rather than SSL3 and TLS 1.0.
+
+    Command Line
+    - A settings package file (.bcpkg) can now be imported non-interactively from the command line using bcompare <filename> /silent
+
+    Folder Compare
+    - Fixed connecting to a UNC path without permission to access parent folders.
+    - Failed/canceled copies will now delete partially transferred files if the target file was created during the copy.
+    - Fixed high-DPI scaling of Browse dialog's "Quick Connect" panels.
+
+    Folder Sync
+    - Fixed long translations of preset descriptions overwriting the summary label.
+
+    Misc
+    - Fixed support for canceling update downloads.
+
+    Scripting
+    - OS X/Linux: Fixed support for "~/log.txt" style filenames in "LOG" command.
+
+    Text Merge
+    - Fixed issues with lines that only exist in the ancestor file when that panel is hidden in the display.
+
+    WebDAV
+    - Fixed problems connecting to older SSL servers.
+    - Fixed folders showing within themselves.
+    - Fixed support for filenames containing '#'.
+
+    Crashes
+    - Fixed Hex Compare crash when resizing view.
+    - Fixed MP3/Registry/Version Compare crash when using Find with no items visible.
+    - Windows: Fixed crash when another application has the clipboard open.
+    - Fixed crash when reading files with malformed UTF-8 sequences.
+    - OS X: Fixed folder browse dialog crash when $HOME is set to a non-standard location.
+    - Fixed crash when importing sessions
   </releaseNotes>
   </metadata>
 </package>
