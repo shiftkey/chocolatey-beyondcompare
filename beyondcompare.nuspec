@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>beyondcompare</id>
-    <version>4.0.5.19480</version>
+    <version>4.0.7.19761</version>
     <title>Beyond Compare</title>
     <authors>Scooter Software</authors>
     <owners>Miguel Madero, Brendan Forster</owners>
@@ -12,14 +12,12 @@
     <summary>Beyond Compare is focused.  Beyond Compare allows you to quickly and easily compare your files and folders.  By using simple, powerful commands you can focus on the differences you're interested in and ignore those you're not.  You can then merge the changes, synchronize your files, and generate reports for your records.</summary>
     <tags>compare beyondcompare beyond</tags>
 	<releaseNotes>
-      --------------------------------
-      v4.0.5.19480,      Jan. 27, 2015
-      --------------------------------
+    --------------------------------
+    v4.0.7.19761,      Mar. 4, 2015
+    --------------------------------
 
-      FTP
-      - Fixed support for connecting through SSL using FTPS, Webdav, and other connection methods after patches for Poodle exploit.
-      - Fixed re-prompting for an SSH private key passphrase if the first one entered isn't correct.
-      - Fixed loading the public key portion of a PuTTY .ppk file when the private key is encrypted.
+    Notable Changes
+    - Fixed trial mode issues on OS X 10.6.8.
   </releaseNotes>
   </metadata>
 </package>
