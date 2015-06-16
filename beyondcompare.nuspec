@@ -7,10 +7,13 @@
     <authors>Scooter Software</authors>
     <owners>Miguel Madero, Brendan Forster</owners>
     <projectUrl>http://scootersoftware.com/download.php</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/dtgm/chocolatey-packages/df0375a1fab41e47eaef69f758e59591091f6cba/icons/beyondcompare.png</iconUrl>
+    <licenseUrl>http://www.scootersoftware.com/index.php?zz=kb_licensev4</licenseUrl>
+    <copyright>© 1996 Scooter Software Inc</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Beyond Compare is focused.  Beyond Compare allows you to quickly and easily compare your files and folders.  By using simple, powerful commands you can focus on the differences you're interested in and ignore those you're not.  You can then merge the changes, synchronize your files, and generate reports for your records.</description>
     <summary>Beyond Compare is focused.  Beyond Compare allows you to quickly and easily compare your files and folders.  By using simple, powerful commands you can focus on the differences you're interested in and ignore those you're not.  You can then merge the changes, synchronize your files, and generate reports for your records.</summary>
-    <tags>compare beyondcompare beyond</tags>
+    <description>This is the trial version of Beyond Compare. It will work for 30 days, and after that it requires a license.</description>
+    <tags>compare beyondcompare beyond trial</tags>
 	<releaseNotes>
     --------------------------------
     v4.0.7.19761,      Mar. 4, 2015
