@@ -23,7 +23,14 @@ function Update-Version
        $newContents = $contents -replace "<version>\d{1,}\.\d{1,}\.\d{1,}\.\d{1,}</version>", "<version>$release.$build</version>"
        $newContents | Out-File $nuspec -Encoding Utf8
 
-       # TODO: modify chocolatey script
+       $installScript = Join-Path $PSScriptRoot "tools/chocolateyInstall.ps1"
+       $contents = Get-Content $installScript -Encoding Utf8
+       $newContents = $contents -replace "'\d{1,}\.\d{1,}\.\d{1,}\.\d{1,}'", "'$release.$build'"
+       $newContents | Out-File $installScript -Encoding Utf8
+
+       Write-Host
+       Write-Host "Updated nuspec and install script, commit this change and open a pull request to the upstream repository on GitHub!"
+
    }
    else
    {
