@@ -13,9 +13,11 @@ And you're done!
 
 ## BeyondCompare has been updated! Help!
 
-When a new release of BeyondCompare is out in the wild, there's two different ways you can help out:
+When a new release of BeyondCompare is out in the wild, updating this package is easy:
 
- 1. Raise an issue so I can track it in my GitHub notifications
- 2. Submit a pull request with the necessary changes
+ 1. Fork this repository to your local environment
+ 2. Run the `.\Update-Version.ps1` to update the package artifacts
+ 3. Commit the changes to a branch and push it to your fork
+ 3. Submit a pull request
 
-It's not a hard task to update, just repetitive. So if you want to see it happen quicker, you can get involved!
+After I merge the pull request, I'll publish a new release to Chocolatey so they can review it.
