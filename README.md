@@ -6,8 +6,8 @@ It's actually really easy.
 
  1. Follow the instructions on [chocolatey.org](http://chocolatey.org/) to setup Chocolatey
  2. Clone this repository and navigate to the folder in Powershell
- 3. `cpack` to create the package
- 4. `cinst beyondcompare -Source *"full-directory-path"*` to install it locally
+ 3. `Build.ps1` to create the package
+ 4. `cinst beyondcompare -Source "full-directory-path"` to install it locally
 
 And you're done!
 

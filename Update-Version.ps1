@@ -18,12 +18,12 @@ function Update-Version
        Write-Host "Found version $release.$build"
        Write-Host "Release date: $day/$month/$year"
 
-       $nuspec = Join-Path $PSScriptRoot "beyondcompare.nuspec"
+       $nuspec = Join-Path $PSScriptRoot "src/beyondcompare.nuspec"
        $contents = Get-Content $nuspec -Encoding Utf8
        $newContents = $contents -replace "<version>\d{1,}\.\d{1,}\.\d{1,}\.\d{1,}</version>", "<version>$release.$build</version>"
        $newContents | Out-File $nuspec -Encoding Utf8
 
-       $installScript = Join-Path $PSScriptRoot "tools/chocolateyInstall.ps1"
+       $installScript = Join-Path $PSScriptRoot "src/tools/chocolateyInstall.ps1"
        $contents = Get-Content $installScript -Encoding Utf8
        $newContents = $contents -replace "'\d{1,}\.\d{1,}\.\d{1,}\.\d{1,}'", "'$release.$build'"
        $newContents | Out-File $installScript -Encoding Utf8
