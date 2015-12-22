@@ -1,0 +1,1 @@
+﻿choco pack .\src\beyondcompare.nuspec
