@@ -1,3 +1,52 @@
+function Parse-ReleaseNotes()
+{
+    $response = Invoke-WebRequest -Uri http://www.scootersoftware.com/download.php?zz=v4changelog
+
+    $html = $response.ParsedHtml
+
+    $heading2 = $html.getElementsByTagName("h2");
+    $h2 = $heading2[0]
+
+    $secondH2 = $heading2[1]
+
+    "## " + $h2.innerText
+
+    foreach ($child in $h2.parentElement.children)
+    {
+        if ($child -eq $h2) {
+            continue;
+        }
+
+        if ($child -eq $secondH2) {
+            break;
+        }
+    
+        $prefix = ""
+        if ($child.nodeName -eq "h2")
+        {
+        $prefix = "## "
+        }
+
+        if ($child.nodeName -eq "h4")
+        {
+            $prefix = "#### "
+        }
+
+        if ($child.nodeName -eq "ul")
+        {
+            foreach ($li in $child.children)
+            {
+                $s = $li.innerHTML -replace "<strong>", "**" -replace "</strong>", "**" -replace "</?code>", "``"
+                "* " + $s
+            }
+
+        } else {
+
+            $prefix + $child.innerText
+        }
+    }
+}
+
 function Update-Version
 {
    $response = Invoke-WebRequest -Uri "http://www.scootersoftware.com/download.php"
@@ -18,10 +67,15 @@ function Update-Version
        Write-Host "Found version $release.$build"
        Write-Host "Release date: $day/$month/$year"
 
+       $releaseNotes = (Parse-ReleaseNotes) -join "`n"
+
        $nuspec = Join-Path $PSScriptRoot "src/beyondcompare.nuspec"
-       $contents = Get-Content $nuspec -Encoding Utf8
-       $newContents = $contents -replace "<version>\d{1,}\.\d{1,}\.\d{1,}\.\d{1,}</version>", "<version>$release.$build</version>"
-       $newContents | Out-File $nuspec -Encoding Utf8
+       $contents = [xml] (Get-Content $nuspec -Encoding Utf8)
+
+       $contents.package.metadata.version = "$release.$build"
+       $contents.package.metadata.releaseNotes = $releaseNotes
+
+       $contents.Save($nuspec)
 
        $installScript = Join-Path $PSScriptRoot "src/tools/chocolateyInstall.ps1"
        $contents = Get-Content $installScript -Encoding Utf8
