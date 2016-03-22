@@ -9,7 +9,7 @@ function Parse-ReleaseNotes()
 
     $secondH2 = $heading2[1]
 
-    "## " + $h2.innerText
+    "#### " + $h2.innerText
 
     foreach ($child in $h2.parentElement.children)
     {
@@ -22,14 +22,18 @@ function Parse-ReleaseNotes()
         }
     
         $prefix = ""
+        $suffix = ""
+
         if ($child.nodeName -eq "h2")
         {
-        $prefix = "## "
+            $prefix = "`n`r#### "
+            $suffix = "`n`r"
         }
 
         if ($child.nodeName -eq "h4")
         {
-            $prefix = "#### "
+            $prefix = "`n`r##### "
+            $suffix = "`n`r"
         }
 
         if ($child.nodeName -eq "ul")
@@ -42,7 +46,7 @@ function Parse-ReleaseNotes()
 
         } else {
 
-            $prefix + $child.innerText
+            $prefix + $child.innerText + $suffix
         }
     }
 }

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>beyondcompare</id>
-    <version>4.1.4.20978</version>
+    <version>4.1.5.21031</version>
     <title>Beyond Compare</title>
     <authors>Scooter Software</authors>
     <owners>Miguel Madero, Brendan Forster</owners>
@@ -17,76 +17,66 @@
     <summary>Beyond Compare is focused.  Beyond Compare allows you to quickly and easily compare your files and folders.  By using simple, powerful commands you can focus on the differences you're interested in and ignore those you're not.  You can then merge the changes, synchronize your files, and generate reports for your records.</summary>
     <description>This is the trial version of Beyond Compare. It will work for 30 days, and after that it requires a license.</description>
     <tags>compare beyondcompare beyond trial</tags>
-    <releaseNotes>## 4.1.4.20978 - March 3, 2015
-#### Notable Changes
-* **Windows**: Added "/32" switch to installer to force a 32-bit install on 64-bit Windows in order to work around MSSCCI source control providers that don't have 64-bit DLLs. 
-* **Windows**: Fixed 64-bit build's support for Explorer submenu's Cut/Copy commands. 
-* Re-added Table Compare support for overriding decimal and thousands separator characters. 
-* Fixed crash when using cloud profiles (Amazon S3, Microsoft OneDrive, WebDAV) on February 29th. 
-* Various fixes and enhancements. 
-#### Archives
-* **Windows**: Fixed support for drag &amp;amp; drop of files in compressed archives from various applications. 
-* **OS X/Linux**: Fixed support for LZMA compression in RPM files. 
-* **OS X/Linux**: Upgraded 7-zip support to 15.09. 
-#### Cloud Services
-* Fixed Amazon S3 support for listing more than 1000 folders within a single parent. 
-* Fixed Amazon S3 support for uploading very large files. 
-* Fixed support for uploading files larger than 100MB to Microsoft OneDrive. 
-#### Command Line
-* Fixed `/fileviewer=` support for `"Folder Compare"`, `"Folder Sync"`, and `"Folder Merge"` when passed with folder paths. 
-* **OS X**: Fixed intermittent delay on startup when launching using command line tools. 
-#### File Formats
-* **OS X/Linux**: Fixed importing and exporting file formats with helper files. 
-* **OS X/Linux**: Fixed support for renaming file formats using right click command and keyboard shortcut. 
-* Fixed support for .docx files that have internal .xml files using single quotes instead of double quotes for attribute values. 
-#### File Views
-* **Windows**: Fixed "Find what" and "Replace with" edits automatically picking MRUs. 
-* Improved line details drawing of multi-line content in MP3 Compare, Registry Compare, and Version Compare. 
-#### Folder Compare
-* **OS X/Linux**: Fixed support for moving files in subfolders between file system mount points. 
-#### Folder Merge
-* Added "Ignore Same Changes" filter. 
-#### Folder Sync
-* **OS X**: Fixed "Delete to recycle bin" option to refer to trash instead. 
-#### Hex Compare
-* Fixed "Find Previous" to not include beyond current byte. 
-* **OS X/Linux**: Fixed slow performance when editing. 
-#### Home View
-* **OS X**: Fixed path edits not being refreshed when selecting a session in the treeview. 
-#### Installer
-* **Windows**: Added "/32" switch to installer to force a 32-bit install on 64-bit Windows in order to work around MSSCCI source control providers that don't have 64-bit DLLs. 
-#### Misc
-* **Windows**: Fixed 64-bit build's support for Explorer submenu's Cut/Copy commands. 
-* Opening multiple modal dialogs on a single form will now open them sequentially rather than all at once. 
-* **Windows**: Fixed Windows 7+ jumplist including auto-saved sessions that can't be loaded. 
-* **Windows**: Fixed icon scaling for simple message dialogs. 
-* **Linux**: Fixed slow startup when there are lots of network printers available. 
-* **Linux/Gnome**: Fixed default focus on "Save Changes?" and various other dialogs. 
-* Fixed memory leaks. 
-* Fixed clipped text in About dialog. 
-#### Picture Compare
-* Fixed "File Info" panel. 
-#### Reports
-* Fixed filename collisions when generating HTML folder reports with linked file reports. 
-* Fixed plain text reports handling of multiline data. 
-* Fixed Table Compare and Registry Compare support for strike-outs in reports. 
-* Fixed HTML linked file reports to use the same style sheet, title, and wrap setting as the parent folder report. 
-* Footer font, header font, HTML wrap style, and style sheet URL are now stored per report type instead of globally. 
-#### Source Control
-* **Linux**: Fixed support for diffs/merges launched from ClearCase. 
-#### Table Compare
-* Re-added support for overriding decimal and thousands separator characters. 
-* Fixed data not to be treated as numeric if thousands separators are not in correct positions. 
-#### Text Views
-* "Next Difference" now scrolls line details so the difference is near the left side. 
-* **OS X/Linux**: Fixed slow performance when editing. 
-* **OS X/Linux**: Fixed support for saving files with Unicode characters outside the basic multilingual pane. 
-* **Windows**: Fixed "Replace with" edit showing as selected when the panel is first shown. 
-#### Crashes
-* Fixed crash when using cloud profiles (Amazon S3, Microsoft OneDrive, WebDAV) on February 29th. 
-* **OS X/Linux**: Fixed Folder Compare crash when attempting to collapse folders while loading with folders being automatically expanded. 
-* **Windows**: Fixed crash when showing modal dialogs on 64-bit Windows installs. 
-* **OS X**: Fixed startup crash on OS X 10.10.1. 
-* **Linux**: Fixed report "Print Preview" crash </releaseNotes>
+    <releaseNotes>#### 4.1.5.21031 - March 18, 2016
+
+##### Notable Changes
+
+* Fixed copying/moving files between disks/partitions/servers not working or not preserving DOS 8.3 names, NTFS ACLs, creation dates, or Unix xattrs. (Broken in 4.1.4) 
+* **Windows**: Fixed support for adding files with non-ASCII filenames to zip archives. 
+* Added INCLUDE-EMPTY option to scripting SNAPSHOT command. 
+* **OS X/Linux**: Added/fixed support for Unix mode within zip archives. 
+
+##### Archives
+
+* **OS X/Linux**: Added support for modifying Unix mode in zip archives. 
+* **OS X/Linux**: Fixed reading/writing Unix mode within zip archives. 
+* **Windows**: Fixed support for adding files with non-ASCII filenames to zip archives. 
+
+##### Cloud Services
+
+* Fixed support for Amazon S3 buckets in Frankfurt and Seoul regions. 
+
+##### Folder Compare
+
+* Fixed copying/moving files between disks/partitions/servers not working or not preserving DOS 8.3 names, NTFS ACLs, creation dates, or Unix xattrs. (Broken in 4.1.4) 
+* Fixed folders being incorrectly treated as successfully loaded if enumerating their contents failed part way through. 
+* Fixed error handling during folder loads so transient network errors no longer treat the folder as deleted. 
+
+##### FTP
+
+* Fixed support for connection to SSH servers that have disabled diffie-hellman-*-sha1 key exchange algorithms. 
+
+##### Home View
+
+* Fixed painting bug when pinning or unpinning session management on Home view. 
+
+##### Installer
+
+* **Linux**: Fixed "Check for Updates" support on .deb based installs. 
+* **Linux**: Fixed x86_64.tar.gz incorrectly installing to /usr/lib32 on CentOS 7. 
+
+##### Misc
+
+* **OS X/Linux**: Fixed button order and default buttons for various dialogs. 
+* **Linux**: Fixed drag and drop of file with non-ASCII characters in their filenames. 
+* Fixed high DPI support of various images. 
+
+##### Portable Devices (MTP)
+
+* **Windows**: Fixed intermittent folder load errors on a Philips GoGear MP3 player. 
+* **Windows**: Fixed "Element not found" errors when deleting files on a Philips GoGear MP3 player. 
+
+##### Scripting
+
+* Added INCLUDE-EMPTY option to scripting SNAPSHOT command. 
+
+##### Crashes
+
+* **Windows**: Fixed crash when deleting using an external application to delete an unbuilt folder on an MTP device. 
+* **Windows**: Fixed crash when renaming folders within archives. 
+* **Windows**: Fixed crash when deleting a file on an MTP device while it's open in a file view. 
+* Fixed Text Patch crash using "Cut" app command. 
+* Fixed Hex Compare crash when typing in gap in the ANSI panel in overwrite mode. 
+* **OS X/Linux**: Fixed crash when loading malformed Unicode data in the Text Compare/Table Compare. </releaseNotes>
   </metadata>
 </package>
