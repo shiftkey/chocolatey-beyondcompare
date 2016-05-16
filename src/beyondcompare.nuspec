@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>beyondcompare</id>
-    <version>4.1.5.21031</version>
+    <version>4.1.6.21095</version>
     <title>Beyond Compare</title>
     <authors>Scooter Software</authors>
     <owners>Miguel Madero, Brendan Forster</owners>
@@ -17,66 +17,49 @@
     <summary>Beyond Compare is focused.  Beyond Compare allows you to quickly and easily compare your files and folders.  By using simple, powerful commands you can focus on the differences you're interested in and ignore those you're not.  You can then merge the changes, synchronize your files, and generate reports for your records.</summary>
     <description>This is the trial version of Beyond Compare. It will work for 30 days, and after that it requires a license.</description>
     <tags>compare beyondcompare beyond trial</tags>
-    <releaseNotes>#### 4.1.5.21031 - March 18, 2016
+    <releaseNotes>#### 4.1.6.21095 - May 13, 2016
 
-##### Notable Changes
+##### File Views
 
-* Fixed copying/moving files between disks/partitions/servers not working or not preserving DOS 8.3 names, NTFS ACLs, creation dates, or Unix xattrs. (Broken in 4.1.4) 
-* **Windows**: Fixed support for adding files with non-ASCII filenames to zip archives. 
-* Added INCLUDE-EMPTY option to scripting SNAPSHOT command. 
-* **OS X/Linux**: Added/fixed support for Unix mode within zip archives. 
-
-##### Archives
-
-* **OS X/Linux**: Added support for modifying Unix mode in zip archives. 
-* **OS X/Linux**: Fixed reading/writing Unix mode within zip archives. 
-* **Windows**: Fixed support for adding files with non-ASCII filenames to zip archives. 
-
-##### Cloud Services
-
-* Fixed support for Amazon S3 buckets in Frankfurt and Seoul regions. 
+* Fixed current side indication when switching from path edits to other controls (e.g. "Find what" edit). 
 
 ##### Folder Compare
 
-* Fixed copying/moving files between disks/partitions/servers not working or not preserving DOS 8.3 names, NTFS ACLs, creation dates, or Unix xattrs. (Broken in 4.1.4) 
-* Fixed folders being incorrectly treated as successfully loaded if enumerating their contents failed part way through. 
-* Fixed error handling during folder loads so transient network errors no longer treat the folder as deleted. 
+* **OS X**: Fixed "Touch" dialog modifying dates off by an hour depending on if daylight saving time is in effect. 
+* Fixed "Open With" to use URL paths instead of `profile:` based ones when 1 or more than 2 items are selected. 
 
 ##### FTP
 
-* Fixed support for connection to SSH servers that have disabled diffie-hellman-*-sha1 key exchange algorithms. 
+* Fixed excess memory usage when loading FTP/SFTP folder listings. 
 
-##### Home View
+##### Hex Compare
 
-* Fixed painting bug when pinning or unpinning session management on Home view. 
+* Removed "Floating Extended" from "Little Endian Values" and "Big Endian Values" submenus. 
 
 ##### Installer
 
-* **Linux**: Fixed "Check for Updates" support on .deb based installs. 
-* **Linux**: Fixed x86_64.tar.gz incorrectly installing to /usr/lib32 on CentOS 7. 
+* **OS X**: Fixed downloading and installing updates failing with a "File missing" error. (Broken in 4.1.4). 
 
 ##### Misc
 
-* **OS X/Linux**: Fixed button order and default buttons for various dialogs. 
-* **Linux**: Fixed drag and drop of file with non-ASCII characters in their filenames. 
-* Fixed high DPI support of various images. 
+* **Linux**: Fixed support for `-title1` and related switches. 
 
-##### Portable Devices (MTP)
+##### Reports
 
-* **Windows**: Fixed intermittent folder load errors on a Philips GoGear MP3 player. 
-* **Windows**: Fixed "Element not found" errors when deleting files on a Philips GoGear MP3 player. 
+* Fixed resource leak when generating Folder Compare reports. 
 
-##### Scripting
+##### Source Control
 
-* Added INCLUDE-EMPTY option to scripting SNAPSHOT command. 
+* Fixed exit codes returned when using ClearCase's `-status_only` switch. 
+
+##### Table Compare
+
+* Fixed orphan columns to not be excluded from the comparison. 
+* Fixed Session Settings dialog's handling of last column. 
+* Fixed detection of cell type error. 
 
 ##### Crashes
 
-* **Windows**: Fixed crash when deleting using an external application to delete an unbuilt folder on an MTP device. 
-* **Windows**: Fixed crash when renaming folders within archives. 
-* **Windows**: Fixed crash when deleting a file on an MTP device while it's open in a file view. 
-* Fixed Text Patch crash using "Cut" app command. 
-* Fixed Hex Compare crash when typing in gap in the ANSI panel in overwrite mode. 
-* **OS X/Linux**: Fixed crash when loading malformed Unicode data in the Text Compare/Table Compare. </releaseNotes>
+* Fixed Table Compare crash when regional settings are Dutch but file and format overrides are English. </releaseNotes>
   </metadata>
 </package>
