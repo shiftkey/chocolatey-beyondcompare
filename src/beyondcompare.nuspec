@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>beyondcompare</id>
-    <version>4.1.6.21095</version>
+    <version>4.1.7.21529</version>
     <title>Beyond Compare</title>
     <authors>Scooter Software</authors>
     <owners>Miguel Madero, Brendan Forster</owners>
@@ -17,49 +17,80 @@
     <summary>Beyond Compare is focused.  Beyond Compare allows you to quickly and easily compare your files and folders.  By using simple, powerful commands you can focus on the differences you're interested in and ignore those you're not.  You can then merge the changes, synchronize your files, and generate reports for your records.</summary>
     <description>This is the trial version of Beyond Compare. It will work for 30 days, and after that it requires a license.</description>
     <tags>compare beyondcompare beyond trial</tags>
-    <releaseNotes>#### 4.1.6.21095 - May 13, 2016
+    <releaseNotes>#### 4.1.7.21529 - August 19, 2016
+
+##### Notable Changes
+
+* Text Merge output files will now be written using file format external conversion settings. 
+* Various fixes and improvements. 
+
+##### Archives
+
+* Upgraded 7-zip libraries to 16.02 to fix code execution vulnerability in UDF (.img, .iso) decoder (CVE-2016-2334 and CVE-2016-2335). 
+* **Windows**: Added support for PKZip v1 legacy compression algorithms (Implode, Reduce, Shrink). 
+
+##### Cloud Services
+
+* Fixed support for Unicode paths and filenames on SharePoint WebDAV servers. 
+* Fixed support for connecting to Amazon S3 buckets in the eu-west-1 region that were created in 2013 and earlier. 
+* Fixed resource leak when uploading/downloading from Microsoft OneDrive. 
+* **Windows**: "Open With" for WebDAV profiles now passes http:// URLs to the requested application instead of BC-specific profile: ones. 
+* Improved error message if an S3 bucket is stored in an unrecognized AWS region. 
+* Fixed loading WebDAV folder listings that include empty getcontentlength entries. 
+
+##### Command Line
+
+* Fixed `/fileviewer=` switch to use fixed English phrases instead of translated strings. 
+
+##### File Formats
+
+* **OS X/Linux**: Fixed importing file formats with external helper executables. 
+* Fixed loading .docx files that have been modified using MiniZip. 
 
 ##### File Views
 
-* Fixed current side indication when switching from path edits to other controls (e.g. "Find what" edit). 
-
-##### Folder Compare
-
-* **OS X**: Fixed "Touch" dialog modifying dates off by an hour depending on if daylight saving time is in effect. 
-* Fixed "Open With" to use URL paths instead of `profile:` based ones when 1 or more than 2 items are selected. 
-
-##### FTP
-
-* Fixed excess memory usage when loading FTP/SFTP folder listings. 
-
-##### Hex Compare
-
-* Removed "Floating Extended" from "Little Endian Values" and "Big Endian Values" submenus. 
+* "Save File Using Profile" now handles "Editing disabled" just like "Save File on File System As" does. 
+* Changed button caption in "Save Changes?" confirmation dialog from "Save None" to "Discard All". 
 
 ##### Installer
 
-* **OS X**: Fixed downloading and installing updates failing with a "File missing" error. (Broken in 4.1.4). 
+* .msi packages now use SHA-256 code signing signatures instead of SHA-1 ones. 
 
 ##### Misc
 
-* **Linux**: Fixed support for `-title1` and related switches. 
+* Fixed support for scrolling using laptops/tablets with precision touchpads (.e.g, Surface Pro). 
+* **OS X**: Fixed support for Beyond Compare "Services" menu extensions in apps other than Finder. 
+* Added Japanese as an official language. 
+* Time limited license keys now show a warning on the Home view when close to the expiration, and show the expiration date in the About dialog. 
+
+##### Options
+
+* Improved appearance of Options dialog and Home view for themes with dark backgrounds. 
 
 ##### Reports
 
-* Fixed resource leak when generating Folder Compare reports. 
-
-##### Source Control
-
-* Fixed exit codes returned when using ClearCase's `-status_only` switch. 
+* Fixed Picture Compare Report to use printer DPI instead of screen DPI. 
+* Fixed Picture Compare Report handling of empty comparison. 
+* Fixed plain text output of right justified text. 
+* Fixed plain text output handling of gap lines. 
+* Fixed Table Compare plain text output of interleaved headers. 
 
 ##### Table Compare
 
-* Fixed orphan columns to not be excluded from the comparison. 
-* Fixed Session Settings dialog's handling of last column. 
-* Fixed detection of cell type error. 
+* Fixed performance regression introduced in 4.1.4. 
+
+##### Text Views
+
+* **Windows**: Fixed displaying emoji characters when "Enable font linking in editors" is enabled. 
+* **Linux**: Fixed slow performance when long lines are visible. 
+
+##### Text Merge
+
+* Output files will now be written using file format external conversion settings. 
 
 ##### Crashes
 
-* Fixed Table Compare crash when regional settings are Dutch but file and format overrides are English. </releaseNotes>
+* **Windows**: Fixed crash when opening a file on 64-bit Windows. 
+* **Windows**: Fixed crash when opening Options dialog to Tweaks panel while DisableCheckForUpdates registry tweak is active. </releaseNotes>
   </metadata>
 </package>

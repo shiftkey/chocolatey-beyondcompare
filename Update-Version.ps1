@@ -1,6 +1,6 @@
 function Parse-ReleaseNotes()
 {
-    $response = Invoke-WebRequest -Uri http://www.scootersoftware.com/download.php?zz=v4changelog
+    $response = Invoke-WebRequest -Uri https://secure.scootersoftware.com/download.php?zz=v4changelog
 
     $html = $response.ParsedHtml
 
@@ -51,9 +51,23 @@ function Parse-ReleaseNotes()
     }
 }
 
+function Calculate-Hash($url)
+{
+    $tempFile = New-TemporaryFile
+
+    Invoke-WebRequest -Uri $url -OutFile $tempFile
+
+    $hash = Get-FileHash $tempFile -Algorithm MD5
+
+    Remove-Item $tempFile
+
+    $hash
+}
+
 function Update-Version
 {
-   $response = Invoke-WebRequest -Uri "http://www.scootersoftware.com/download.php"
+
+   $response = Invoke-WebRequest -Uri "https://secure.scootersoftware.com/download.php"
    $content = $response.Content
 
    # Current Version:&nbsp; 4.1.3, build 20814, released Dec. 17, 2015
@@ -76,14 +90,27 @@ function Update-Version
        $nuspec = Join-Path $PSScriptRoot "src/beyondcompare.nuspec"
        $contents = [xml] (Get-Content $nuspec -Encoding Utf8)
 
-       $contents.package.metadata.version = "$release.$build"
+       $version = "$release.$build"
+       $contents.package.metadata.version = $version
        $contents.package.metadata.releaseNotes = $releaseNotes
 
        $contents.Save($nuspec)
 
        $installScript = Join-Path $PSScriptRoot "src/tools/chocolateyInstall.ps1"
        $contents = Get-Content $installScript -Encoding Utf8
-       $newContents = $contents -replace "'\d{1,}\.\d{1,}\.\d{1,}\.\d{1,}'", "'$release.$build'"
+       $newContents = $contents -replace "'\d{1,}\.\d{1,}\.\d{1,}\.\d{1,}'", "'$version'"
+
+       "de", "fr", "jp", "" | ForEach-Object {
+           if ($_ -ne "") {
+                $dash = "-" 
+           } else {
+                $dash = ""
+           }
+
+           $hash = Calculate-Hash "https://secure.scootersoftware.com/BCompare-$_$dash$version.exe"
+           $newContents = $newContents -replace "checksum$_\s*=\s*'[a-fA-F0-9]+'", "checksum$_ = '$($hash.Hash)'"
+       }
+
        $newContents | Out-File $installScript -Encoding Utf8
 
        Write-Host
@@ -95,5 +122,8 @@ function Update-Version
        Write-Host "Unable to find the release on the download page. Check the regex above"
    }
 }
+
+# This is necessary to avoid Invoke-WebRequest failing with "The request was aborted: Could not create SSL/TLS secure channel."
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 Update-Version
