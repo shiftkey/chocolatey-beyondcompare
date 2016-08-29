@@ -5,7 +5,7 @@ $german = @(3079,1031,5127,4103,2055)
 $french = @(2060,11276,3084,9228,12300,1036,5132,13324,6156,14348,10252,4108,7180)
 $japanese = @(17, 1041)
 
-$version = '4.1.7.21529'
+$version = '4.1.8.21575'
 
 $packageArgs = @{
   packageName   = 'beyondcompare'
@@ -17,10 +17,10 @@ $packageArgs = @{
   checksumType  = 'md5'
 }
 
-$checksumde = '9A379F00070DC8672AC30D1A3272E534'
-$checksumfr = '8150F649A909C1E40B6B940D8B70A070'
-$checksumjp = '1D503709FE2F0A6111FE56E6271F977E'
-$checksum = '4899D66C1C328239C9561C375E66A461'
+$checksumde = '7E2F60B1225AA20C20F5241608B3B919'
+$checksumfr = 'F56DECFB8F7A5E516316C4D14596CA02'
+$checksumjp = '31D7DFF43B584AAA7A61BCD14C051AAB'
+$checksum = '79F7F43630E1677D22A637E1BDED5B69'
 
 if ($german -contains $LCID)
 {
