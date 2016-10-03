@@ -57,7 +57,7 @@ function Calculate-Hash($url)
 
     Invoke-WebRequest -Uri $url -OutFile $tempFile
 
-    $hash = Get-FileHash $tempFile -Algorithm MD5
+    $hash = Get-FileHash $tempFile -Algorithm SHA256
 
     Remove-Item $tempFile
 
@@ -71,7 +71,7 @@ function Update-Version
    $content = $response.Content
 
    # Current Version:&nbsp; 4.1.3, build 20814, released Dec. 17, 2015
-   $isMatch = $content -match "Current Version:&nbsp; (?<release>\d{1,}\.\d{1,}\.\d{1,}), build (?<build>\d{1,}), released (?<month>[A-Za-z]{3})\.? (?<day>[0-9]{1,2})\, (?<year>[0-9]{4})"
+   $isMatch = $content -match "Current Version:(&nbsp;|\s)*(?<release>\d{1,}\.\d{1,}\.\d{1,}), build (?<build>\d{1,}), released (?<month>[A-Za-z]{3,4})\.? (?<day>[0-9]{1,2})\, (?<year>[0-9]{4})"
 
    if ($isMatch)
    {
@@ -122,8 +122,5 @@ function Update-Version
        Write-Host "Unable to find the release on the download page. Check the regex above"
    }
 }
-
-# This is necessary to avoid Invoke-WebRequest failing with "The request was aborted: Could not create SSL/TLS secure channel."
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 Update-Version

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>beyondcompare</id>
-    <version>4.1.8.21575</version>
+    <version>4.1.9.21719</version>
     <title>Beyond Compare</title>
     <authors>Scooter Software</authors>
     <owners>Miguel Madero, Brendan Forster</owners>
@@ -16,14 +16,16 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>Beyond Compare is focused.  Beyond Compare allows you to quickly and easily compare your files and folders.  By using simple, powerful commands you can focus on the differences you're interested in and ignore those you're not.  You can then merge the changes, synchronize your files, and generate reports for your records.</summary>
     <description>This is the trial version of Beyond Compare. It will work for 30 days, and after that it requires a license.</description>
-    <tags>compare beyondcompare beyond trial admin</tags>
-    <releaseNotes>#### 4.1.8.21575 - August 25, 2016
+    <tags>compare beyondcompare beyond file diff difference trial admin</tags>
+    <releaseNotes>#### 4.1.9.21719 - September 30, 2016
 
+##### Notable Changes
 
-##### Changes
-
-* **Windows**: Fixed scripting error when creating a new OneDrive profile. 
-* **Windows**: Fixed Explorer right-click menu translations of "Compare Using" submenu. 
-* Fixed displaying custom messages on Home view. </releaseNotes>
+* **OS X**: Fixed SSL/TLS-based profiles (FTPS, WebDAV, Dropbox, Amazon S3) crashes on macOS Sierra. 
+* **OS X/Linux**: Fixed Hex Compare Find never completing. </releaseNotes>
+    <dependencies>
+      <!-- This version has builtin support for SSL/TLS 1.2 -->
+      <dependency id="chocolatey" version="0.10.1" />
+    </dependencies>
   </metadata>
 </package>
