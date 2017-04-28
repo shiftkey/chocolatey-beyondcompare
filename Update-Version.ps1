@@ -1,6 +1,8 @@
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
 function Parse-ReleaseNotes()
 {
-    $response = Invoke-WebRequest -Uri https://secure.scootersoftware.com/download.php?zz=v4changelog
+    $response = Invoke-WebRequest -Uri https://www.scootersoftware.com/download.php?zz=v4changelog
 
     $html = $response.ParsedHtml
 
@@ -67,7 +69,7 @@ function Calculate-Hash($url)
 function Update-Version
 {
 
-   $response = Invoke-WebRequest -Uri "https://secure.scootersoftware.com/download.php"
+   $response = Invoke-WebRequest -Uri "https://www.scootersoftware.com/download.php"
    $content = $response.Content
 
    # Current Version:&nbsp; 4.1.3, build 20814, released Dec. 17, 2015
@@ -107,7 +109,7 @@ function Update-Version
                 $dash = ""
            }
 
-           $hash = Calculate-Hash "https://secure.scootersoftware.com/BCompare-$_$dash$version.exe"
+           $hash = Calculate-Hash "https://www.scootersoftware.com/BCompare-$_$dash$version.exe"
            $newContents = $newContents -replace "checksum$_\s*=\s*'[a-fA-F0-9]+'", "checksum$_ = '$($hash.Hash)'"
        }
 
