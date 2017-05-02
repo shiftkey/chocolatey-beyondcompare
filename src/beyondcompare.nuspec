@@ -5,7 +5,7 @@
     <version>4.2.0.22302</version>
     <title>Beyond Compare</title>
     <authors>Scooter Software</authors>
-    <owners>Miguel Madero, Brendan Forster</owners>
+    <owners>Miguel Madero, Brendan Forster, David Gardiner</owners>
     <projectUrl>http://scootersoftware.com/download.php</projectUrl>
     <iconUrl>https://cdn.rawgit.com/dtgm/chocolatey-packages/df0375a1fab41e47eaef69f758e59591091f6cba/icons/beyondcompare.png</iconUrl>
     <licenseUrl>http://www.scootersoftware.com/index.php?zz=kb_licensev4</licenseUrl>
@@ -19,7 +19,8 @@
     <tags>compare beyondcompare beyond file diff difference trial admin</tags>
     <releaseNotes>#### 4.2.0.22302 - April 28, 2017
 
-##### Notable Changes
+
+##### Notable Changes
 
 * **Windows**: Added clipboard monitoring app to more easily launch comparisons from text editors. Must be enabled manually in Options dialog if upgrading from 4.1 or earlier. Requires Windows Vista or later. 
 * **macOS**: Added full Finder context menu extension on macOS 10.10 and above. Must be enabled manually from the Beyond Compare "Preferences" dialog or macOS System Preferences. May require a reboot. 
@@ -30,7 +31,8 @@
 * **macOS**: Fixed scrolling behavior on macOS 10.12 Sierra and fixed Cmd+W/Esc inserting characters in a text editor rather than closing the view. 
 * Improved various graphics on high DPI displays and updated many icons. 
 
-##### Archives
+
+##### Archives
 
 * Added support for Microsoft Help 2.x archives and ext2fs/ext3fs/ext4fs disk images. 
 * Added support for .lzma and .tar.lzma/.tlz archives. 
@@ -44,7 +46,8 @@
 &lt;LI&gt;**Windows**: Updated UnRAR.dll to v5.40. &lt;/LI&gt;&lt;/UL&gt;
 * **Windows**: Fixed issue with Total Commander packer plug-ins in 64-bit builds. 
 
-##### Cloud Services
+
+##### Cloud Services
 
 * Upgraded Dropbox support to use v2 API. 
 &lt;UL&gt;
@@ -58,13 +61,15 @@
 * Added optional "Bucket" to Amazon S3 profiles to limit the profile to that bucket and to make it more obvious how to connect when the user doesn't have the ListAllBuckets permission. 
 * **Windows**: Added support connecting to Amazon S3 over IPv6. 
 
-##### Command Line
+
+##### Command Line
 
 * **macOS**: Fixed failure to load new comparisons from the command line after opening many previously without closing Beyond Compare. 
 * **Linux**: Fixed minimized window not restoring when launching a new comparison. 
 * **Linux**: Fixed main menu corruption when loading a second tab from the command line. 
 
-##### File Formats
+
+##### File Formats
 
 * Added "JavaScript Source" text format. 
 * Updated "Python Scripts" text format keywords. 
@@ -72,7 +77,8 @@
 * **Windows**: Fixed MS Word extraction when running on a system with the Korean locale. 
 * Improved "SQL" text format to detect identifiers that start with "#". 
 
-##### File Views
+
+##### File Views
 
 * Added font resizing via Ctrl+Shift+MouseWheel and added "Increase Display Font Size", "Decrease Display Font Size", and "Reset Display Font Size" commands. 
 * Added support for adding/removing Unicode byte-order marks in the "Save As" dialog. 
@@ -83,39 +89,46 @@
 * Fixed editors not repainting during slow saves after switching tabs. 
 * Fixed dimmed painting of items during horizontal scrolls in MP3, Registry, and Version Compare sessions. 
 
-##### Folder Compare
+
+##### Folder Compare
 
 * Removed "Bypass disk cache during binary comparisons" option. Due to changes in hardware, operating systems, and drivers, it no longer works as originally intended. 
 * Fixed canceling a rules-based or binary comparison of a large pair of files caching incorrect CRC values and causing subsequent CRC or rules-based comparisons to report immediately matching contents. 
 * Fixed minimum column size to take margins into account. 
 
-##### Folder Merge
+
+##### Folder Merge
 
 * "Compare to Output" now preserves session settings (e.g. Name Filters). 
 * "Merge/Sync Base Folders" now preserves more session settings. 
 * Fixed "Ignored" action, when merging to a separate output folder, to not copy the center file to the output. 
 
-##### Folder Sync
+
+##### Folder Sync
 
 * Fixed toolbar appearing below the path edits. 
 
-##### FTP
+
+##### FTP
 
 * Fixed "Hide VMS versions" support for SFTP profiles. 
 * Fixed requesting CRC32 values over SFTP. 
 * Fixed Profiles dialog not updating controls when switching between FTP and SFTP profiles. 
 
-##### Hex Compare
+
+##### Hex Compare
 
 * Added support for switching between the hex and ANSI parts of the editor using Tab and Shift+Tab. 
 
-##### Installer
+
+##### Installer
 
 * **Windows**: Start Menu icon is now just a single "Beyond Compare 4" item rather than a folder with the app, help file, and uninstaller (new installs only). 
 * **Windows**: Fixed automatic upgrades of a portable install writing values in the registry if there is also an existing "For All Users" install. 
 * **Windows**: Removed UACLaunch.exe from Windows installer. 
 
-##### Misc
+
+##### Misc
 
 * **Windows**: Added clipboard monitoring app to more easily launch comparisons from text editors. 
 * **macOS**: Added full Finder context menu extension on macOS 10.10 and above. 
@@ -128,7 +141,8 @@
 * **macOS/Linux**: Fixed "Show Differences" popup button visibility and toolbar context menu checked states. 
 * Upgraded third party libraries. 
 
-##### MP3 Compare
+
+##### MP3 Compare
 
 * Improved handling for various ID3 tags. 
 * Changed ID3v2 tag names to match their ID3v1 counterparts. 
@@ -137,11 +151,13 @@
 * "Copy" puts binary data on the clipboard if only one item is selected and it is binary. 
 * Added separator lines below each row of the treeview. 
 
-##### Options
+
+##### Options
 
 * Improved typing into "Extra line spacing" edit on "Tweaks" page. 
 
-##### Picture Compare
+
+##### Picture Compare
 
 * Added support for comparing JPEG/TIFF EXIF and IPTC metadata. 
 * "Fit to Window" zooms to multiple of 100% for images smaller than 64x64. 
@@ -149,18 +165,21 @@
 * Fixed NetPBM image handling of comments containing numbers. 
 * Changed order of items in "Picture Compare Info" dialog. 
 
-##### Registry Compare
+
+##### Registry Compare
 
 * "Copy" puts text on the clipboard unless only one item is selected and it is binary. 
 * Added separator lines below each row of the treeview. 
 
-##### Reports
+
+##### Reports
 
 * File reports now include error messages. 
 * **macOS/Linux**: Added mouse wheel handling to "Print Preview" dialog. 
 * Picture Compare HTML reports now scale down large images to fit the window. 
 
-##### Table Compare
+
+##### Table Compare
 
 * Improved number handling accuracy by storing data as binary-coded decimals instead of floats. 
 * Added "Alignment" session settings. 
@@ -168,24 +187,29 @@
 * **Windows**: Updated MS Excel support. 
 * Fixed using regional number/date format settings, broken in 4.1.7. 
 
-##### Text Edit
+
+##### Text Edit
 
 * Added folder path of open file to dropdown for "Find in Files" folder edit. 
 
-##### Text Views
+
+##### Text Views
 
 * **macOS**: Fixed Find with "Match Whole Word" always failing. 
 
-##### Text Compare
+
+##### Text Compare
 
 * **macOS/Linux**: Fixed thumbnail showing 1 pixel high if two comparisons are launched quickly. 
 * **Linux**: Removed non-functional "Webpages" command. 
 
-##### Text Merge
+
+##### Text Merge
 
 * Changed order of items in "Text Merge Info" dialog. 
 
-##### Version Compare
+
+##### Version Compare
 
 * Added support for comparing "Dynamic Base (ALSR)" and "NX compatible (DEP)" DLL characteristics. 
 * Disabled character based differencing for numeric values. 
@@ -193,11 +217,13 @@
 * "Copy" puts binary data on the clipboard if only one item is selected and it is binary. 
 * Added separator lines below each row of the treeview. 
 
-##### View Patch
+
+##### View Patch
 
 * Added check for external file changes. 
 
-##### Crashes
+
+##### Crashes
 
 * Fixed MP3, Registry, Version Compare crash if Ctrl+A is pressed when line details have focus and Ctrl+A isn't used as a shortcut for a menu action. 
 * **Windows**: Fixed BCompareLite crash when opening/closing Options dialog. 
