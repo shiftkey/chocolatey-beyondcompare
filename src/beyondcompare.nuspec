@@ -19,7 +19,6 @@
     <tags>compare beyondcompare beyond file diff difference trial admin</tags>
     <releaseNotes>#### 4.2.0.22302 - April 28, 2017
 
-
 ##### Notable Changes
 
 * **Windows**: Added clipboard monitoring app to more easily launch comparisons from text editors. Must be enabled manually in Options dialog if upgrading from 4.1 or earlier. Requires Windows Vista or later. 
@@ -36,24 +35,21 @@
 
 * Added support for Microsoft Help 2.x archives and ext2fs/ext3fs/ext4fs disk images. 
 * Added support for .lzma and .tar.lzma/.tlz archives. 
-* Improved RAR support: 
-&lt;UL&gt;
-&lt;LI&gt;Added support for RAR5 archives containing symlinks/junction points. 
-&lt;LI&gt;Archives created on Unix now display Unix attributes correctly. 
-&lt;LI&gt;Fixed CRC values for files that are split across multiple RAR volumes. 
-&lt;LI&gt;**macOS/Linux**: Fixed support for RAR4 and RAR5 archives. 
-&lt;LI&gt;**Windows**: Fixed support for empty folders in archives created on Unix. 
-&lt;LI&gt;**Windows**: Updated UnRAR.dll to v5.40. &lt;/LI&gt;&lt;/UL&gt;
+- Improved RAR support: 
+  - Added support for RAR5 archives containing symlinks/junction points. 
+  - Archives created on Unix now display Unix attributes correctly. 
+  - Fixed CRC values for files that are split across multiple RAR volumes. 
+  - **macOS/Linux**: Fixed support for RAR4 and RAR5 archives. 
+  - **Windows**: Fixed support for empty folders in archives created on Unix. 
+  - **Windows**: Updated UnRAR.dll to v5.40. &lt;/LI&gt;&lt;/UL&gt;
 * **Windows**: Fixed issue with Total Commander packer plug-ins in 64-bit builds. 
-
 
 ##### Cloud Services
 
 * Upgraded Dropbox support to use v2 API. 
-&lt;UL&gt;
-&lt;LI&gt;File last modified times can now be set. 
-&lt;LI&gt;Folder last modified times are no longer reported. 
-&lt;LI&gt;Folder listings with more than 2,000 items are now supported. &lt;/LI&gt;&lt;/UL&gt;
+  - File last modified times can now be set. 
+  - Folder last modified times are no longer reported. 
+  - Folder listings with more than 2,000 items are now supported. &lt;/LI&gt;&lt;/UL&gt;
 * Fixed support for Amazon S3 buckets in the us-east-2 (US East Ohio), ca-central-1 (Canada Central), eu-west-2 (EU London), and ap-south-1 (Asia Pacific Mumbai) regions and removed need to explicitly support new ones. 
 * Improved OneDrive authorization and error handling. 
 * Deleting folders on OneDrive now deletes everything in one call instead of removing everything recursively. 
