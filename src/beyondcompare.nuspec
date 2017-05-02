@@ -233,4 +233,7 @@
       <dependency id="chocolatey" version="0.10.1" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>  
 </package>
