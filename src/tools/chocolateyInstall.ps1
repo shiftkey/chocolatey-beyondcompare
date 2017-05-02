@@ -44,7 +44,4 @@ else
     $packageArgs.checksum = $checksum
 }
 
-# This is necessary to avoid Invoke-WebRequest failing with "The request was aborted: Could not create SSL/TLS secure channel."
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-
 Install-ChocolateyPackage @packageArgs
